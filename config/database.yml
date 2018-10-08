@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username:
+  password:
+
+development:
+  <<: *default
+  database: crawler_demo_dev
+
+test: &test
+  <<: *default
+  database: crawler_demo_test
+
+production:
+  <<: *default
+  database: crawler_demo_pro
+  pool: 20

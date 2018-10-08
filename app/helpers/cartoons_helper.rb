@@ -1,0 +1,2 @@
+module CartoonsHelper
+end

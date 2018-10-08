@@ -1,0 +1,53 @@
+<div class="page-header">
+  <div class="page-header-top">
+    <div class="container">
+      <div class="page-logo">
+        <a href="index.html">
+          <img src="/admin/assets/layouts/layout3/img/logo-default.jpg" alt="logo" class="logo-default">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="page-header-menu" style="display: block;">
+    <div class="container">
+      <form class="search-form" action="page_general_search.html" method="GET">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" name="query">
+          <span class="input-group-btn">
+            <a href="javascript:;" class="btn submit">
+              <i class="icon-magnifier"></i>
+            </a>
+          </span>
+        </div>
+      </form>
+      <div class="hor-menu  ">
+        <ul class="nav navbar-nav">
+          <li class="menu-dropdown mega-menu-dropdown <%= 'active mega-menu-full' if controller_name == 'homepages' %>">
+            <%= link_to root_path do %>
+              Dashboard
+              <span class="arrow"></span>
+            <% end %>
+          </li>
+          <li class="menu-dropdown mega-menu-dropdown <%= 'active mega-menu-full' if controller_name == 'movies' %>"">
+            <%= link_to movies_path do %>
+              Dashboard
+              <span class="arrow"></span>
+            <% end %>
+          </li>
+          <li class="menu-dropdown mega-menu-dropdown <%= 'active mega-menu-full' if controller_name == 'teleplays' %>"">
+            <%= link_to teleplays_path do %>
+              Dashboard
+              <span class="arrow"></span>
+            <% end %>
+          </li>
+          <li class="menu-dropdown mega-menu-dropdown  <%= 'active mega-menu-full' if controller_name == 'cartoons' %>"">
+            <%= link_to cartoons_path do %>
+              Dashboard
+              <span class="arrow"></span>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

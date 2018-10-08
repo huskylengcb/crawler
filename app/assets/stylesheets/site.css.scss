@@ -1,0 +1,39 @@
+.wy-pro-list {
+	list-style: none;
+	padding: 0;
+	text-align: center;
+	li {
+		margin: 10px 19px;
+    width: 180px;
+		float: left;
+		border: 1px solid #eee;
+		overflow: hidden;
+	}
+	.text {
+		padding: 0 5px;
+	}
+	h5 {
+		text-align: left;
+		font-weight: bold;
+		font-size: 14px;
+	}
+	.score {
+		float: right;
+		width: 20px;
+		height: 20px;
+		border-radius: 10px;
+		background-color: #36c6d3;
+		color: #fff;
+		font-weight: bold;
+	}
+	p {
+		font-weight: 200;
+		text-align: left;
+		font-size: 12px;
+		margin-bottom: 10px;
+	}
+	a {
+		color: #000;
+		text-decoration: none;
+	}
+}

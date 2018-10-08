@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: movies
+#
+#  id         :bigint(8)        not null, primary key
+#  title      :string
+#  intro      :string
+#  score      :integer
+#  url        :string
+#  img_url    :string
+#  source     :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  intro: MyString
+  score: 1
+  url: MyString
+  img_url: MyString
+
+two:
+  title: MyString
+  intro: MyString
+  score: 1
+  url: MyString
+  img_url: MyString
