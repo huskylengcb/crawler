@@ -19,4 +19,5 @@ class Movie < ApplicationRecord
 	validates :title, presence: true
 	validates :title, uniqueness: true
 
+  scope :sorted, -> {order(created_at: :asc)}
 end

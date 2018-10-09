@@ -1,1 +1,33 @@
-<iframe src="<%= 'https://api.pangujiexi.com/player.php?url=' + @movie.url%>" style="width: 600px; height: 600px"></iframe>
+<!-- <iframe src="<%#= 'http://jx.618g.com/?url=' + @movie.url%>" style="width: 600px; height: 600px"></iframe> -->
+<div class="container">
+  <div style="width: 800px; height: 600px; background-color: #fff; float: left;"></div>
+  <div style="float: right; width: 330px; min-height: 600px; margin-left: 10px; background-color: white">
+  	<div class="portlet light ">
+      <div class="portlet-title">
+        <div class="caption">
+          <i class="icon-share font-red-sunglo"></i>
+          <span class="caption-subject font-red-sunglo bold uppercase">Wells</span>
+        </div>
+      </div>
+      <div class="portlet-body">
+        <div class="well">
+        	<% 10.times do |a| %>
+        	  <!-- <a href="javascript:;" class="btn default <%#= "bg-green-meadow bg-font-green-meadow bold" if a == 1%>" style="margin: 2px;"> <%= a %> </a> -->
+        	<% end %>
+        	<a href="javascript:;" class="btn default green-stripe"> 哈哈哈哈 </a>
+        </div>
+        <div class="well">
+            <h4 class="block">I am a default well</h4>
+            <p> Tight pants next level keffiyeh trigger me on click haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. </p>
+        </div>
+        <div class="well">
+            <h4 class="block">I am a default well</h4>
+            <p> Tight pants next level keffiyeh trigger me on click haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <video width="600" height="600" controls>
+  <source src="<%#= 'https://api.pangujiexi.com/player.php?url=' + @movie.url%>">
+</video> -->

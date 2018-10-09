@@ -8,6 +8,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta content="" name="description"/>
     <meta content="" name="author"/>
+    <meta name="referrer" content="origin">
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -50,12 +51,11 @@
             <%= yield %>
           </div>
         </div>
-<!--         <div class="page-content">
-          <div style="margin-top: -60px;">
-            <%#= yield %>
-          </div>
-        </div>
-        <%#= render '/layouts/footer' %> -->
+      </div>
+      <%= render '/layouts/prefooter' %>
+      <%= render '/layouts/footer' %>
+      <div class="scroll-to-top" style="display: block;">
+        <i class="icon-arrow-up"></i>
       </div>
     </div>
   </body>

@@ -3,6 +3,7 @@ require 'net/http'
 namespace :movie do
 	desc ""
 	task :get_from_aiqiyi => :environment do
+		Movie.destroy_all
 		30.times do |index|
 			# byebug
 			# uri = URI("https://list.iqiyi.com/www/1/-------------11-#{index + 1}-1-iqiyi--.html")
@@ -39,8 +40,4 @@ def get_actors(dom)
 	return [] unless dom
 	dom.map {|item| item.values[3] }[1..-1]
 end
-
-#     req = urllib.request.Request(url=url,headers=headers)#这里要注意，必须使用url=url，headers=headers的格式，否则回报错，无法连接字符
-    
-# response = urllib.request.urlopen(req)#注意，这里要用req，不然就被添加useragent
 
