@@ -4,28 +4,51 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-# Ignore bundler config.
-/.bundle
+.DS_Store
+~$*
+*.swp
+*.pid
+.idea
+.svn
+.bundle
+.cache
+npm-debug.log
+db/*.sqlite3
+db/sphinx
+config/database.yml
+config/backup.rb
+config/puma.rb
+config/master.key
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
-
-# Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
-
-# Ignore uploaded files in development
+log/*
+nbproject/
+public/assets
+public/system
+public/uploads
+public/images
+public/tmp
+public/sitemap*
+public/images/gift_cards
+tmp/**/*
+tmp/restart.txt
+*.bak
+.tags*
+db/*.sqlite3*
+coverage
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
+# Ignore Spring files.
+/spring/*.pid
+frontend/node_modules
+frontend/node_modules
+node_modules
+clients
+config/settings_local.yml
+.byebug_history
+.rspec
+builds
+log
+yarn-error.log
 /storage/*
 !/storage/.keep
-
-/node_modules
-/yarn-error.log
-
-/public/assets
-.byebug_history
-
-# Ignore master key for decrypting credentials and more.
-/config/master.key
