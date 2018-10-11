@@ -1,23 +1,25 @@
 # == Schema Information
 #
-# Table name: movies
+# Table name: videos
 #
 #  id         :bigint(8)        not null, primary key
 #  title      :string
 #  intro      :string
-#  score      :integer
-#  url        :string
 #  img_url    :string
+#  url        :string
+#  actors     :jsonb
 #  source     :integer
+#  score      :string
+#  duration   :string
+#  video_type :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Movie < ApplicationRecord
-	enum source: {iqiyi: 0}
+require 'test_helper'
 
-	validates :title, presence: true
-	validates :title, uniqueness: true
-
-  scope :sorted, -> {order(created_at: :asc)}
+class VideoTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

@@ -1,21 +1,21 @@
 # == Schema Information
 #
-# Table name: movies
+# Table name: episodes
 #
 #  id         :bigint(8)        not null, primary key
-#  title      :string
-#  intro      :string
-#  score      :integer
-#  url        :string
+#  video_id   :integer
+#  duration   :string
 #  img_url    :string
-#  source     :integer
+#  url        :string
+#  number     :integer
+#  intro      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'test_helper'
 
-class MovieTest < ActiveSupport::TestCase
+class EpisodeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

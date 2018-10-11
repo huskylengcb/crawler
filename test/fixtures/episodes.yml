@@ -1,14 +1,14 @@
 # == Schema Information
 #
-# Table name: movies
+# Table name: episodes
 #
 #  id         :bigint(8)        not null, primary key
-#  title      :string
-#  intro      :string
-#  score      :integer
-#  url        :string
+#  video_id   :integer
+#  duration   :string
 #  img_url    :string
-#  source     :integer
+#  url        :string
+#  number     :integer
+#  intro      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -16,15 +16,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  intro: MyString
-  score: 1
-  url: MyString
+  owner_id: 1
+  owner_type: MyString
+  duration: MyString
   img_url: MyString
+  url: MyString
+  number: 1
 
 two:
-  title: MyString
-  intro: MyString
-  score: 1
-  url: MyString
+  owner_id: 1
+  owner_type: MyString
+  duration: MyString
   img_url: MyString
+  url: MyString
+  number: 1

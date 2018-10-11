@@ -1,10 +1,10 @@
 class MoviesController < ApplicationController
 
 	def index
-    @movies = Movie.limit(10)
+    @movies = Video.movie.limit(10)
 	end
 
 	def show
-		@movie = Movie.find(params[:id])
+		@movie = Video.find(params[:id])
 	end
 end

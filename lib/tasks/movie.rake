@@ -3,7 +3,7 @@ require 'net/http'
 namespace :movie do
 	desc ""
 	task :get_from_aiqiyi => :environment do
-		Movie.destroy_all
+		Video.movie.destroy_all
 		30.times do |index|
 			# byebug
 			# uri = URI("https://list.iqiyi.com/www/1/-------------11-#{index + 1}-1-iqiyi--.html")
@@ -20,13 +20,14 @@ namespace :movie do
 					info_params =
 					{ title: dom.css("div.site-piclist_info a")[0].content,
 						intro: nil,
+						duration: deal_string(dom.css("span.icon-vInfo")[0].content),
 						score: dom.css("div.site-piclist_info span.score")[0].content,
 						url: dom.css("div.site-piclist_pic a")[0].values[11],
 						img_url: "https:" + dom.css("div.site-piclist_pic img")[0].attributes["src"].value,
 						actors: get_actors(dom.css("div.site-piclist_info a")),
 						source: :iqiyi
 					}
-			    Movie.create(info_params) unless Movie.where(title: info_params[:title]).present?
+			    Video.movie.create(info_params) unless Video.movie.where(title: info_params[:title]).present?
 				rescue Exception => e
 					p e
 					next
@@ -39,5 +40,10 @@ end
 def get_actors(dom)
 	return [] unless dom
 	dom.map {|item| item.values[3] }[1..-1]
+end
+
+def deal_string(string)
+	return nil unless string
+	string.gsub(/\r\n/, "").strip
 end
 

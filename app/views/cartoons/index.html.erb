@@ -1,5 +1,34 @@
-<% @movies.each do |movie| %>
-  <%= movie.title %>
-<% end %>
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="portlet light bordered">
+        <div class="portlet-title">
+          <div class="caption font-green-sharp">
+          	<%= link_to cartoons_path do %>
+  	          <i class="icon-speech font-green-sharp"></i>
+  	          <span class="caption-subject bold uppercase"> Portlet</span>
+  	          <span class="caption-helper">weekly stats...</span>
+            <% end %>
+          </div>
+        </div>
+        <div class="portlet-body">
+        	<div style="height: 580px;">
+      			<ul class="wy-pro-list">
+      				<% @cartoons.each do |cartoon| %>
+      				<li>
+                <%= link_to cartoon_path(cartoon) do %>
+                  <img src="<%= cartoon.img_url %>" style="width: 180px; height: 200px;">
+                  <div class="text">
+                  	<h5><%= cartoon.title.truncate(12) %></h5>
+                  	<p><%= cartoon.intro.truncate(25) if cartoon.intro %></p>
+                  </div>
+                <% end %>
+      				</li>
+      				<% end %>
+      			</ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
