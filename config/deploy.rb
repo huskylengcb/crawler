@@ -13,7 +13,7 @@ set :repository, 'git@github.com:huskylengcb/crawler_demo.git'
 
 set :rvm_use_path, '/usr/local/rvm/scripts/rvm'
 set :shared_dirs, ['public/uploads', 'log', 'tmp/pids', 'tmp/sockets', 'public/images', 'vendor/bundle']
-set :shared_files, ['config/database.yml', 'config/puma.rb']
+set :shared_files, ['config/database.yml', 'config/master.key', 'config/puma.rb']
 
 task :environment do
   invoke :'rvm:use', '2.4.1'
