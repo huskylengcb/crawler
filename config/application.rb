@@ -16,7 +16,6 @@ module CrawlerDemo
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    PinYin.backend = PinYin::Backend::Simple.new
     config.exceptions_app = self.routes
 
     config.eager_load_paths += %W(#{config.root}/lib #{config.root}/app/uploaders #{config.root}/app/policies)
