@@ -18,10 +18,16 @@
       				<li>
                 <%= link_to teleplay_path(teleplay) do %>
                   <img src="<%= teleplay.img_url %>" style="width: 180px; height: 200px;">
+                  <div class="wrapper-listTitle">
+                    <div class="mod-listTitle">
+                      <p class="video_rb">
+                        <span class="icon-vInfo"><%= teleplay.duration %></span>
+                      </p>
+                    </div>
+                  </div>
                   <div class="text">
-                  	<div class="score"><%= teleplay.score %></div>
                   	<h5><%= teleplay.title.truncate(12) %></h5>
-                  	<p><%= teleplay.intro.truncate(25) if teleplay.intro %></p>
+                    <p class="overflow-hidden">主演：<%= teleplay.actors_html %></p>
                   </div>
                 <% end %>
       				</li>

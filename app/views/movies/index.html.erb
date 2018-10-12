@@ -18,10 +18,17 @@
       				<li>
                 <%= link_to movie_path(movie) do %>
                   <img src="<%= movie.img_url %>" style="width: 180px; height: 200px;">
+                  <div class="wrapper-listTitle">
+                    <div class="mod-listTitle">
+                      <p class="video_rb">
+                        <span class="icon-vInfo"><%= movie.duration %></span>
+                      </p>
+                    </div>
+                  </div>
                   <div class="text">
                   	<div class="score"><%= movie.score %></div>
                   	<h5><%= movie.title.truncate(12) %></h5>
-                  	<p><%= movie.intro.truncate(25) if movie.intro %></p>
+                  	<p class="overflow-hidden">主演：<%= movie.actors_html %></p>
                   </div>
                 <% end %>
       				</li>

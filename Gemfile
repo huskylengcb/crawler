@@ -84,6 +84,11 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'byebug'
+
+  gem 'mina', require: false
+  gem 'mina-puma', require: false
+  gem 'mina-sidekiq', require: false
+  gem 'mina-multistage', require: false
 end
 
 group :test do

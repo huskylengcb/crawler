@@ -37,3 +37,37 @@
 		text-decoration: none;
 	}
 }
+
+.wrapper-listTitle {
+	padding: 0 3px;
+	height: 24px;
+	padding-top: 5px;
+	cursor: pointer;
+	position: relative;
+	margin-top: -25px;
+	.mod-listTitle {
+	  line-height: 24px;
+	  /*color: #fff;*/
+	  .video_rb{
+	    position: absolute;
+	    right: 0;
+	    .icon-vInfo {
+		    height: 16px;
+		    padding: 0 5px;
+		    border-radius: 3px;
+		    font: 12px/15px Tahoma,Helvetica,Arial,"\5FAE\8F6F\96C5\9ED1",sans-serif;
+		    color: #fff;
+		    overflow: hidden;
+		    background: rgba(0,0,0,.6);
+		    margin: 0 4px 4px 0;
+        float: right;
+        width: auto;
+	    }
+	  }
+	}
+}
+.overflow-hidden {
+	overflow:hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

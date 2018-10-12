@@ -18,9 +18,16 @@
       				<li>
                 <%= link_to cartoon_path(cartoon) do %>
                   <img src="<%= cartoon.img_url %>" style="width: 180px; height: 200px;">
+                  <div class="wrapper-listTitle">
+                    <div class="mod-listTitle">
+                      <p class="video_rb">
+                        <span class="icon-vInfo"><%= cartoon.duration %></span>
+                      </p>
+                    </div>
+                  </div>
                   <div class="text">
                   	<h5><%= cartoon.title.truncate(12) %></h5>
-                  	<p><%= cartoon.intro.truncate(25) if cartoon.intro %></p>
+                  	<p class="overflow-hidden"><%= cartoon.intro.truncate(25) %></p>
                   </div>
                 <% end %>
       				</li>

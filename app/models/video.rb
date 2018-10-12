@@ -21,4 +21,9 @@ class Video < ApplicationRecord
 	has_many :episodes, dependent: :destroy
 
 	scope :sorted, -> { order(created_at: :asc) }
+
+	def actors_html
+		actors.join(",").gsub(",", " ")
+	end
+
 end
