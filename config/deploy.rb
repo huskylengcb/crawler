@@ -15,7 +15,7 @@ set :rvm_use_path, '/usr/local/rvm/scripts/rvm'
 set :shared_dirs, ['public/uploads', 'log', 'tmp/pids', 'tmp/sockets', 'public/images', 'vendor/bundle']
 set :shared_files, ['config/database.yml', 'config/master.key', 'config/puma.rb']
 
-task :environment do
+task :remote_environment do
   invoke :'rvm:use', '2.4.1'
 end
 
@@ -47,7 +47,6 @@ task :deploy do #发布
   deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
-    invoke :'rvm:use', '2.4.1'
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
