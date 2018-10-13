@@ -12,7 +12,7 @@ set :application_name, 'crawler_demo'
 set :repository, 'git@github.com:huskylengcb/crawler_demo.git'
 
 set :rvm_use_path, '/usr/local/rvm/scripts/rvm'
-set :shared_dirs, ['public/uploads', 'log', 'tmp/pids', 'tmp/sockets', 'public/images', 'public/admin', 'vendor/bundle']
+set :shared_dirs, ['public/uploads', 'log', 'tmp/pids', 'tmp/sockets', 'vendor/bundle']
 set :shared_files, ['config/database.yml', 'config/master.key', 'config/puma.rb']
 
 task :remote_environment do
