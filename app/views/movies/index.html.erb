@@ -5,14 +5,13 @@
         <div class="portlet-title">
           <div class="caption font-green-sharp">
           	<%= link_to movies_path do %>
-  	          <i class="icon-speech font-green-sharp"></i>
-  	          <span class="caption-subject bold uppercase"> Portlet</span>
-  	          <span class="caption-helper">weekly stats...</span>
+  	          <i class="icon-film font-green-sharp m-l-4"></i>
+  	          <span class="caption-subject bold uppercase"> 电影</span>
             <% end %>
           </div>
         </div>
         <div class="portlet-body">
-        	<div style="height: 580px;">
+        	<div style="height: 1700px;">
       			<ul class="wy-pro-list">
       				<% @movies.each do |movie| %>
       				<li>
@@ -34,6 +33,9 @@
       				</li>
       				<% end %>
       			</ul>
+          </div>
+          <div class="paginate-center">
+            <%= paginate @movies %>
           </div>
         </div>
       </div>

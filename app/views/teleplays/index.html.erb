@@ -5,9 +5,8 @@
         <div class="portlet-title">
           <div class="caption font-green-sharp">
           	<%= link_to teleplays_path do %>
-  	          <i class="icon-speech font-green-sharp"></i>
-  	          <span class="caption-subject bold uppercase"> Portlet</span>
-  	          <span class="caption-helper">weekly stats...</span>
+  	          <i class="icon-screen-desktop font-green-sharp m-l-4"></i>
+  	          <span class="caption-subject bold uppercase"> 电视剧</span>
             <% end %>
           </div>
         </div>
@@ -33,6 +32,9 @@
       				</li>
       				<% end %>
       			</ul>
+          </div>
+          <div class="paginate-center">
+            <%= paginate @teleplays %>
           </div>
         </div>
       </div>

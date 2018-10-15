@@ -2,7 +2,7 @@
   <div class="page-header-top">
     <div class="container">
       <div class="page-logo">
-        <a href="index.html">
+        <a href="<%= root_path %>">
           <img src="/admin/assets/layouts/layout3/img/logo-default.jpg" alt="logo" class="logo-default">
         </a>
       </div>
@@ -24,25 +24,25 @@
         <ul class="nav navbar-nav">
           <li class="menu-dropdown mega-menu-dropdown <%= 'active mega-menu-full' if controller_name == 'homepages' %>">
             <%= link_to root_path do %>
-              Dashboard
+              首页
               <span class="arrow"></span>
             <% end %>
           </li>
           <li class="menu-dropdown mega-menu-dropdown <%= 'active mega-menu-full' if controller_name == 'movies' %>"">
             <%= link_to movies_path do %>
-              Dashboard
+              电影
               <span class="arrow"></span>
             <% end %>
           </li>
           <li class="menu-dropdown mega-menu-dropdown <%= 'active mega-menu-full' if controller_name == 'teleplays' %>"">
             <%= link_to teleplays_path do %>
-              Dashboard
+              电视剧
               <span class="arrow"></span>
             <% end %>
           </li>
           <li class="menu-dropdown mega-menu-dropdown  <%= 'active mega-menu-full' if controller_name == 'cartoons' %>"">
             <%= link_to cartoons_path do %>
-              Dashboard
+              动漫
               <span class="arrow"></span>
             <% end %>
           </li>

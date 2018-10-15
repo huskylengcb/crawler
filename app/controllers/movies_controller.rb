@@ -1,8 +1,7 @@
 class MoviesController < ApplicationController
 
-
 	def index
-    @movies = Video.movie.limit(10)
+    @movies = Video.movie.sorted.page(params[:page]).per(30)
 	end
 
 	def show

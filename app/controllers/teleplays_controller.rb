@@ -1,7 +1,7 @@
 class TeleplaysController < ApplicationController
 
 	def index
-    @teleplays = Video.teleplay.limit(10)
+    @teleplays = Video.teleplay.sorted.page(params[:page]).per(30)
 	end
 
 	def show
