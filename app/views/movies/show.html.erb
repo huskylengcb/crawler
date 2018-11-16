@@ -1,6 +1,8 @@
-<!-- <iframe src="<%#= 'http://jx.618g.com/?url=' + @movie.url%>" style="width: 600px; height: 600px"></iframe> -->
 <div class="container">
-  <div style="width: 800px; height: 600px; background-color: #fff; float: left;"></div>
+  <div style="width: 800px; height: 600px; background-color: #fff; float: left;">
+    <iframe src="<%= 'http://jx.618g.com/?url=' + @movie.url%>" style="width: 800px; height: 600px"></iframe>
+    <h2><%= @movie.title%></h2>
+  </div>
   <div style="float: right; width: 330px; min-height: 600px; margin-left: 10px; background-color: white">
   	<div class="portlet light ">
       <div class="portlet-title">

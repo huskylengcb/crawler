@@ -18,6 +18,8 @@ namespace :teleplay do
 						actors: get_actors(dom.css("div.site-piclist_info a")),
 						source: :iqiyi
 					}
+					p dom.css("div.site-piclist_pic a")[0].values[11]
+					p index
 			    Video.teleplay.create(info_params) unless Video.teleplay.where(title: info_params[:title]).present?
 				rescue Exception => e
 					p e
@@ -38,12 +40,11 @@ def get_episode
 				{
 					intro: deal_string(doc.css("p.site-piclist_info_describe")[0].try(:content)),
 					duration: deal_string(dom.css("span.mod-listTitle_right")[0].content),
-					score: nil,
+					name: deal_string(dom.css("p.site-piclist_info_title a")[0].content),
 					url: dom.css("div.site-piclist_pic a")[0].values[1],
-					img_url: "https:" + dom.css("div.site-piclist_pic img")[0].attributes["src"].value,
-					number: deal_string(dom.css("p.site-piclist_info_title a")[0].content)
+					img_url: dom.css("div.site-piclist_pic img")[0].attributes["src"].value
 				}
-		    teleplay.episodes.create(info_params) unless teleplay.episodes.where(number: info_params[:number]).present?
+		    teleplay.episodes.create(info_params) unless teleplay.episodes.where(name: info_params[:name]).present?
 			rescue Exception => e
 				p e
 				next

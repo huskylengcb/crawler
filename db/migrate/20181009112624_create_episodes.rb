@@ -5,7 +5,7 @@ class CreateEpisodes < ActiveRecord::Migration[5.2]
       t.string :duration
       t.string :img_url
       t.string :url
-      t.integer :number
+      t.string :name
       t.string :intro
 
       t.timestamps

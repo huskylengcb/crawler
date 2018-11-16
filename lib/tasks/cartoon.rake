@@ -23,7 +23,30 @@ namespace :cartoon do
 				end
 			end
 	  end
+	  get_episode
 	end
+end
+
+def get_episode
+  Video.cartoon.each do |cartoon|
+  	doc = Nokogiri::HTML(open(cartoon.url), nil, 'utf-8')
+  	doc.css("ul.site-piclist li").each do |dom|
+			begin
+				info_params =
+				{
+					intro: deal_string(doc.css("p.site-piclist_info_describe")[0].try(:content)),
+					duration: deal_string(dom.css("span.mod-listTitle_right")[0].content),
+					name: deal_string(dom.css("p.site-piclist_info_title a")[0].content),
+					url: dom.css("div.site-piclist_pic a")[0].values[1],
+					img_url: dom.css("div.site-piclist_pic img")[0].attributes["src"].value
+				}
+		    cartoon.episodes.create(info_params) unless cartoon.episodes.where(name: info_params[:name]).present?
+			rescue Exception => e
+				p e
+				next
+			end
+  	end
+  end
 end
 
 def deal_string(string)
