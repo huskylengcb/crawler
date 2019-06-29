@@ -4,14 +4,15 @@ require 'mina/rvm'    # for rvm support. (https://rvm.io)
 require 'mina/bundler'
 require 'mina/puma'
 
-set :domain, 'root@116.62.162.141'
+set :user, 'leng'
+set :domain, '116.62.162.141'
 set :deploy_to, '/var/www/crawler_demo'
 set :branch, 'master'
 
 set :application_name, 'crawler_demo'
-set :repository, 'git@github.com:huskylengcb/crawler_demo.git'
+set :repository, 'git@github.com:huskylengcb/crawler.git'
 
-set :rvm_use_path, '/usr/local/rvm/scripts/rvm'
+set :rvm_path, '/usr/local/rvm/scripts/rvm'
 set :shared_dirs, ['public/uploads', 'log', 'tmp/pids', 'tmp/sockets', 'vendor/bundle']
 set :shared_files, ['config/database.yml', 'config/master.key', 'config/puma.rb']
 
@@ -55,7 +56,7 @@ task :deploy do #发布
     invoke :'deploy:cleanup'
 
     on :launch do
-      invoke :'puma:restart'
+      invoke :'puma:phased_restart'
     end
   end
 
