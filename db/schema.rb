@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_112617) do
+ActiveRecord::Schema.define(version: 2019_06_29_085544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "companies", force: :cascade do |t|
+    t.integer "companyId"
+    t.string "companyFullName"
+    t.string "companyShortName"
+    t.string "companyLogo"
+    t.string "city"
+    t.string "industryField"
+    t.string "companyFeatures"
+    t.string "financeStage"
+    t.string "companySize"
+    t.integer "interviewRemarkNum"
+    t.integer "positionNum"
+    t.integer "processRate"
+    t.integer "approve"
+    t.integer "countryScore"
+    t.integer "cityScore"
+    t.float "companyCombineScore"
+    t.string "isHasValidPosition"
+    t.string "otherLabel"
+    t.string "updateTime"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "episodes", force: :cascade do |t|
     t.integer "video_id"
@@ -22,6 +46,42 @@ ActiveRecord::Schema.define(version: 2018_10_10_112617) do
     t.string "url"
     t.integer "number"
     t.string "intro"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.integer "positionId"
+    t.integer "companyId"
+    t.string "jobNature"
+    t.string "positionName"
+    t.string "createTime"
+    t.string "salary"
+    t.string "workYear"
+    t.string "education"
+    t.string "positionAdvantage"
+    t.jsonb "companyLabelList"
+    t.string "district"
+    t.string "workDistrict"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "records", force: :cascade do |t|
+    t.integer "companyId"
+    t.integer "pageNo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "nickname"
+    t.integer "gender"
+    t.string "country"
+    t.string "province"
+    t.string "city"
+    t.string "avatarUrl"
+    t.string "openid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
