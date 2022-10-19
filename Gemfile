@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'http'
-gem 'nokogiri', '~> 1.8', '>= 1.8.4'
+gem 'nokogiri', '~> 1.13'
 
 #设置默认值
 gem "default_value_for"
